@@ -1,0 +1,76 @@
+body {
+  /*to center the item on the page i will flexbox*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  /*
+  Viewport Height (vh).
+  This unit is based on the height of 
+  the viewport. A value of 1vh is equal to 1% of
+  the viewport height
+  */
+  background-color: #222831;
+  overflow: hidden;
+  /*The CSS overflow property
+     controls what happens to content
+     that is too big to fit into an area.*/
+}
+
+button {
+  padding: 15px 25px;
+  /* you know guys 
+  Padding is used to create space
+  around an element's content,
+  inside of any defined borders. */
+  border: unset;
+  /*this will reset all the inherited properties*/
+  border-radius: 15px;
+  /*This property allows
+  you to add rounded corners to elements*/
+  color: #222831;
+  z-index: 1;
+  /*The z-index property specifies
+  the stack order of an element*/
+  background: #e8e8e8;
+  position: relative;
+  /*The element is positioned relative
+   to its normal position*/
+  font-weight: 1000;
+  font-size: 17px;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  /*
+  transitions allows you to change
+  property values smoothly, over a given duration.
+  */
+  overflow: hidden;
+  cursor: pointer;
+}
+button::before {
+  /* ::before (:before) In CSS,
+   ::before creates a pseudo-element that
+    is the first child of the selected element. */
+  content: "";
+  position: absolute;
+  /* absolute means The element is positioned relative to its first positioned*/
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #00ADB5;
+  z-index: -1;
+  /*will be at the bottom*/
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+button:hover {
+  color: #e8e8e8;
+}
+
+button:hover::before {
+  width: 100%;
+}

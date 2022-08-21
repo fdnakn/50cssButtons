@@ -1,0 +1,69 @@
+body{
+    /*to center the item on the page i will flexbox*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    height: 100vh;
+    /*
+    Viewport Height (vh).
+    This unit is based on the height of 
+    the viewport. A value of 1vh is equal to 1% of
+    the viewport height.Here, 100vh means that the
+    initial body height will take 100% of the viewport height.
+    */
+    background-color: #393E46;
+    overflow: hidden;
+    /*i dont want to see scrolls*/
+    /*The CSS overflow property
+     controls what happens to content
+     that is too big to fit into an area.*/
+     /*hidden - The overflow is clipped,
+    and the rest of the content will be invisible*/
+}
+button{
+    padding: 1.3em 3em;
+    /*
+     In 10 pixel type, an em is 10 pixels;
+    in 18 pixel type it is 18 pixels.*/
+    /*
+    The default font size in all browsers
+    tends to be approximately 16 pixels.
+    so 1 em is 16px
+    */
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #000;
+    border: none;
+    border-radius: 45px;
+    /*Tip: This property allows you to add
+     rounded corners to elements! */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    /*
+    The box-shadow property attaches
+    one or more shadows to an element.
+    */
+    transition: all 0.3s ;
+    /*CSS transitions allows you to change property values smoothly,
+    over a given duration.*/
+    cursor: pointer;
+    outline: none;
+}   
+button:hover{
+    /*When a user moves the mouse over a
+     certain area of the screen,
+    a hover effect forces the area to change color,
+    show text or pop-up a box of related information.*/
+    background-color: #00ADB5;
+    box-shadow: 0px 15px 20px rgba(0, 173, 181, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+    /*it will make it go up
+    7px when the mouse hovers over it.*/
+}
+
+/*this was an easy styling, we will gradually
+increase the difficulties and become css ninja,
+see you in the next lesson.*/

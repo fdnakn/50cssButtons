@@ -1,0 +1,54 @@
+body{
+    /*to center the item on the page i will flexbox*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #222831;
+    overflow: hidden;
+    /*The CSS overflow property
+     controls what happens to content
+     that is too big to fit into an area.*/
+}
+button {
+    width: 140px;
+    height: 45px;
+    font-size: 23px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    position: relative;
+    transition: all 0.5s;
+    z-index: 1;
+   }
+   
+   button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #00ADB5;
+    z-index: -1;
+    /* if I don't give z-index -1
+     ,the black stripe won't show the text. */
+    transition: all 0.5s;
+   }
+   
+   button:hover::before {
+    width: 100%;
+   }
+   
+   button:hover {
+    color: black;
+   }
+   
+   button:active:before {
+    background: #b9b9b9;
+   }
