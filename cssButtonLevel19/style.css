@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    /*to center the item on the page i will flexbox*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    /*
+              Viewport Height (vh).
+              This unit is based on the height of 
+              the viewport. A value of 1vh is equal to 1% of
+              the viewport height.Here, 100vh means that the
+              initial body height will take 100% of the viewport height.
+              */
+    background-color: #393e46;
+    overflow: hidden;
+    /*i dont want to see scrolls*/
+    /*The CSS overflow property
+               controls what happens to content
+               that is too big to fit into an area.*/
+    /*hidden - The overflow is clipped,
+              and the rest of the content will be invisible*/
+  }
+  button {
+    color: #fff;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 14px 32px;
+    background: black;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    color: black;
+    transform: translate(-5px,-5px);
+    background: #00ADB5;
+    box-shadow: 6px 6px black;
+    /* horizantal line , vertical line and the last one for black */
+  }
+  
+  /* thats all  */

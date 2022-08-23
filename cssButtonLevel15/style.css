@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /*to center the item on the page i will flexbox*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  /*
+          Viewport Height (vh).
+          This unit is based on the height of 
+          the viewport. A value of 1vh is equal to 1% of
+          the viewport height.Here, 100vh means that the
+          initial body height will take 100% of the viewport height.
+          */
+  background-color: #393e46;
+  overflow: hidden;
+  /*i dont want to see scrolls*/
+  /*The CSS overflow property
+           controls what happens to content
+           that is too big to fit into an area.*/
+  /*hidden - The overflow is clipped,
+          and the rest of the content will be invisible*/
+}
+.main_div {
+  position: relative;
+  z-index: 1;
+  /* we will not give anything */
+}
+
+ .main_div::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  /* it will be square */
+  background: transparent;
+  top: -7px;
+  left: -7px;
+  /* let's take it outside so we can see it comfortably */
+  z-index: -5;
+  border-top: 3px solid #3992e6;
+  border-left: 3px solid #3992e6;
+  /* as you see i want this view */
+  transition: 0.5s;
+}
+
+.main_div::after {
+    /* i will give same codes to after as before */
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  bottom: -7px;
+  right: -7px;
+  z-index: -5;
+  border-right: 3px solid #3992e6;
+  border-bottom: 3px solid #3992e6;
+  transition: 0.5s;
+}
+
+.main_div:hover::before {
+    /* when it hover the height and width will expand */
+  width: 100%;
+  height: 100%;
+}
+
+.main_div:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.main_div button {
+    /* lets style button */
+  padding: 0.7em 2em;
+  font-size: 16px;
+  background: #222222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+} 

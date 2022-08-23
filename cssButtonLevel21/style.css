@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /*to center the item on the page i will flexbox*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  /*
+              Viewport Height (vh).
+              This unit is based on the height of 
+              the viewport. A value of 1vh is equal to 1% of
+              the viewport height.Here, 100vh means that the
+              initial body height will take 100% of the viewport height.
+              */
+  background-color: #222831;
+  overflow: hidden;
+  /*i dont want to see scrolls*/
+  /*The CSS overflow property
+               controls what happens to content
+               that is too big to fit into an area.*/
+  /*hidden - The overflow is clipped,
+              and the rest of the content will be invisible*/
+}
+button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* to center span ı used flex */
+  border-radius: 5px;
+  background: #393E46;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #00ADB5;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+ 
+button:hover::after {
+  left: 0;
+  /* The secret is giving 0 to the left here,
+   so it will start the expansion from the left side. */
+  width: 100%;
+  /* Since the position is already right 0 ,
+ the strip goes back there when the mouse is pulled. */
+}
+
+button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover span {
+  color: #183153;
+} 

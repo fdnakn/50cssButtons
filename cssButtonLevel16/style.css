@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    /*to center the item on the page i will flexbox*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    /*
+            Viewport Height (vh).
+            This unit is based on the height of 
+            the viewport. A value of 1vh is equal to 1% of
+            the viewport height.Here, 100vh means that the
+            initial body height will take 100% of the viewport height.
+            */
+    background-color: #393e46;
+    overflow: hidden;
+    /*i dont want to see scrolls*/
+    /*The CSS overflow property
+             controls what happens to content
+             that is too big to fit into an area.*/
+    /*hidden - The overflow is clipped,
+            and the rest of the content will be invisible*/
+  }
+  /* From uiverse.io by @Botwe-Felix5820 */
+button {
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 100px;
+    background: #016DD9;
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+   }
+   
+   button:hover {
+    animation: bellydancer 0.3s ease infinite;
+    /* firstly we gave the name
+     of animation and transition then we gave
+      infinite it will work non stop */
+
+   }
+   
+   @keyframes bellydancer {
+    0% {
+     transform: translate(0);
+    }
+   
+    20% {
+     transform: translate(-2px, 2px);
+    }
+   
+    40% {
+     transform: translate(-2px, -2px);
+    }
+   
+    60% {
+     transform: translate(2px, 2px);
+    }
+   
+    80% {
+     transform: translate(2px, -2px);
+    }
+   
+    100% {
+     transform: translate(0);
+     /* When it reaches 100 it will take
+    its original form again so it will swing constantly. */
+    }
+   }
+   

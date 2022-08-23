@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /*to center the item on the page i will flexbox*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  /*
+                            Viewport Height (vh).
+                            This unit is based on the height of 
+                            the viewport. A value of 1vh is equal to 1% of
+                            the viewport height.Here, 100vh means that the
+                            initial body height will take 100% of the viewport height.
+                            */
+  background-color: #222831;
+  overflow: hidden;
+  /*i dont want to see scrolls*/
+  /*The CSS overflow property
+                             controls what happens to content
+                             that is too big to fit into an area.*/
+  /*hidden - The overflow is clipped,
+                            and the rest of the content will be invisible*/
+}
+button {
+  width: 160px;
+  height: 45px;
+  position: relative;
+  border: 3px ridge #00ADB5;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  /* it will be a little higher */
+  left: 3%;
+  /* will be a little to the left */
+  width: 95%;
+  height: 40%;
+  background-color: #222831;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+button::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  /* will cover the middle of the border below */
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #222831;
+  transition: 0.5s;
+}
+
+button:hover::before,
+button:hover::after {
+  transform: scale(0);
+  /* When we make it smaller with scale,
+   the old structure of the button will be replaced */
+}
+
+button:hover {
+  box-shadow: inset 0px 0px 25px #00ADB5;
+  /* We use inset to shadow insede of the element */
+}

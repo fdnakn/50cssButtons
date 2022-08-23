@@ -1,0 +1,85 @@
+body {
+  /*to center the item on the page i will flexbox*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  /*
+      Viewport Height (vh).
+      This unit is based on the height of 
+      the viewport. A value of 1vh is equal to 1% of
+      the viewport height.Here, 100vh means that the
+      initial body height will take 100% of the viewport height.
+      */
+  background-color: #393E46;
+  overflow: hidden;
+  /*i dont want to see scrolls*/
+  /*The CSS overflow property
+       controls what happens to content
+       that is too big to fit into an area.*/
+  /*hidden - The overflow is clipped,
+      and the rest of the content will be invisible*/
+}
+button {
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #fff;
+  z-index: 1;
+  /* i want to show text */
+  cursor: pointer;
+}
+
+button::after,
+button::before {
+/* I will write the common features of the two here */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+button::before {
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+button::after {
+  transform: translate(10px, 10px);
+  /* we're gonna push it a little bit to the right and down */
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+  /* this make it like a circle */
+}
+
+button:hover::before {
+  transform: translate(5%, 20%);
+  /* we will push it right and down */
+  width: 110%;
+  height: 110%;
+  /* witdth and height will be expand */
+}
+
+button:hover::after {
+  transform: translate(0, 0);
+  /* we will take it back , it's normal position */
+  width: 100%;
+  height: 100%;
+  /* and the height and width will expand too */
+}
+
+button:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}

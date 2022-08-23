@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /*to center the item on the page i will flexbox*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  /*
+                Viewport Height (vh).
+                This unit is based on the height of 
+                the viewport. A value of 1vh is equal to 1% of
+                the viewport height.Here, 100vh means that the
+                initial body height will take 100% of the viewport height.
+                */
+  background-color: #222831;
+  overflow: hidden;
+  /*i dont want to see scrolls*/
+  /*The CSS overflow property
+                 controls what happens to content
+                 that is too big to fit into an area.*/
+  /*hidden - The overflow is clipped,
+                and the rest of the content will be invisible*/
+}
+.btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 16px 32px;
+    letter-spacing: 2px;
+}
+  
+.draw-border {
+  outline: 2px dotted #EEEEEE;
+  color: #58afd1;
+  transition: .3s;
+  position: relative;
+}
+
+.draw-border::before,
+.draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+ .draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.draw-border:hover {
+  color: #00ADB5;
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
+  border-color: #00ADB5;
+  transition: border-color .3s, width .5s, height .5s;
+  width: 100%;
+  height: 100%;
+}
+
+.draw-border:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+  /* first one is background color , second is width and last is height
+  height will be a little late
+  */
+  /* The transition-delay CSS property 
+  specifies the duration to wait before
+  starting a property's transition effect
+  when its value changes. */
+}
+
+.draw-border:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+   /* first one is background color , second is width and last is height
+  height will be a little late*/
+}
+
+

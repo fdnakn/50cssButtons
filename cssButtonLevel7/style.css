@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* this is our reset codes
+    if we don't give it will look ugly */
+}
+body {
+  /*to center the item on the page
+     i will flexbox*/
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222831;
+}
+button {
+  font-size: 18px;
+  color: white;
+  font-weight: 800;
+  /* The font-weight property sets
+    how thick or thin characters in text
+    should be displayed. */
+  cursor: pointer;
+  position: relative;
+  /*The element is positioned relative
+     to its normal position
+     We will give position absolute 
+     before and after selectors ,so we cannot use it if
+     we do not give relative here
+     */
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  /* this control the capitalization of text */
+  transition-timing-function: 0.3s;
+}
+button:focus,
+button:hover {
+  /* It is generally triggered when the user clicks*/
+  color: #fff;
+}
+
+button:after {
+  content: "";
+  /* we must use content when we use before and after */
+  bottom: -2px;
+  /* it will stay 2px below the bottom */
+  left: 50%;
+  /* and it will positioned left %50 percentage */
+  /* because I want to position it in the middle */
+  position: absolute;
+  /* we must give the absolute */
+  width: 0%;
+  /* when we hover it will be expand  */
+  height: 2px;
+  /* We want it to be a little short because */
+  background-color: #00ADB5;
+  transition: 0.3s;
+}
+
+button:focus:after,
+button:hover:after {
+    /* when we hover and click 
+    the width will expand
+    */
+  width: 100%;
+  left:0%;
+  /* if i dont give left 0% the lets see what happened
+  If I don't pull to the left it will come out
+  */
+}

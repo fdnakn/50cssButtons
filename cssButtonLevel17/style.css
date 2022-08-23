@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /*to center the item on the page i will flexbox*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  /*
+            Viewport Height (vh).
+            This unit is based on the height of 
+            the viewport. A value of 1vh is equal to 1% of
+            the viewport height.Here, 100vh means that the
+            initial body height will take 100% of the viewport height.
+            */
+  background-color: #393e46;
+  overflow: hidden;
+  /*i dont want to see scrolls*/
+  /*The CSS overflow property
+             controls what happens to content
+             that is too big to fit into an area.*/
+  /*hidden - The overflow is clipped,
+            and the rest of the content will be invisible*/
+}
+button {
+  width: 130px;
+  height: 45px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  /* if i dont use 
+  overflow hidden  the after selector
+   will be visible outside the button */
+}
+
+button:hover {
+  color: black;
+  /* the color will be black */
+}
+
+button:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  /* thesee will cover all button */
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  /* The skew() method skews an element into a given angle. */
+  /* ı am giving scale 1 means x line 0 is y line  */
+  transition: all 0.5s;
+}
+
+button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  /* scale will be 1, 1 because x line will expand */
+}

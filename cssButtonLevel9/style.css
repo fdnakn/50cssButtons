@@ -1,0 +1,64 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* this is our reset codes
+  if we don't give it will look ugly */
+}
+body {
+  /*to center the item on the page
+  i will flexbox*/
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222831;
+}
+button {
+    padding: 0.8em 1.8em;
+    /* you know guys 1em is 16 px */
+    border: 2px solid #00ADB5;
+    position: relative;
+    overflow: hidden;
+    /* i will show you again what happened
+     if i dont use overflow hidden */
+    background-color: transparent;
+    text-align: center;
+    /* this Centers the text */
+    text-transform: uppercase;
+    /* this control the capitalization of text */
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    color: #00ADB5;
+    cursor: pointer;
+   }
+   
+   button::before {
+    content: '';
+    /* i must give content when i use before and after */
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* to position in to the middle
+    i gave left and top 50 percentage */
+    transform: translate(-50%, -50%) rotate(45deg);
+    /* translate(-50%, -50%) is to position in to the middle properly,
+     to change direction i gave rotate if i dont give what happened lets see */
+    background: #00ADB5;
+    transition: .5s ease;
+    z-index: -1;
+   }
+   
+   button:hover::before {
+    /* before selector will expand when button hover */
+    width: 100%;
+   }
+   
+   button:hover {
+    /* and the color will change */
+    color: #fff;
+   }

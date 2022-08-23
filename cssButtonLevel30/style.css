@@ -1,0 +1,80 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /*to center the item on the page i will flexbox*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  /*
+                                Viewport Height (vh).
+                                This unit is based on the height of 
+                                the viewport. A value of 1vh is equal to 1% of
+                                the viewport height.Here, 100vh means that the
+                                initial body height will take 100% of the viewport height.
+                                */
+  background-color: #222831;
+  overflow: hidden;
+  /*i dont want to see scrolls*/
+  /*The CSS overflow property
+                                 controls what happens to content
+                                 that is too big to fit into an area.*/
+  /*hidden - The overflow is clipped,
+                                and the rest of the content will be invisible*/
+}
+button {
+  outline: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 140px;
+  height: 50px;
+  border-radius: 18px;
+  box-shadow: 0 0.625em 1em rgba(0 , 173, 173, 0.4) ;
+  overflow: hidden;
+  /* I don't want to show what's left out of the button */
+  cursor: pointer;
+}
+button p {
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+}
+ button div {
+  transform: translateY(0px);
+  /* it will go up when you hover */
+  width: 100%;
+}
+button div {
+  transition: .3s;
+}
+
+button div span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 12px 20px;
+}
+
+button div:nth-child(1) {
+  background-color: #00ADB5;
+}
+
+button div:nth-child(2) {
+  background-color: #83E85A;
+}
+
+button:hover {
+  box-shadow: 0 10px 16px  rgba(33, 220, 98, 0.35);
+}
+
+button:hover div {
+  transform: translateY(-50px);
+}
+
